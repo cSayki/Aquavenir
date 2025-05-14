@@ -1,0 +1,30 @@
+body {
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+    text-align: justify;
+}
+
+header, footer {
+    background-image: url("../data/img/GreenIT.jpg");
+    padding: 15px;
+    text-align: center;
+}
+
+section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #e6f2ff;
+    padding: 20px;
+}
+
+h1 {
+    color: #1f4e79;
+}
+
+h2 {
+    color: #2e8b57;
+}
+
+h2 ~ h3 {
+    color: #8b0000;
+}
