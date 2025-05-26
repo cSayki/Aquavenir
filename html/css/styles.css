@@ -1,57 +1,421 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	scroll-behavior: smooth;
+	font-family: 'Segoe UI', sans-serif;
+	color: #333;
+}
+
 body {
-    background-color: #f0f8ff;
-    font-family: 'Arial', sans-serif;
-    text-align: justify;
+	overflow-x: hidden;
 }
 
-header, footer {
-    background-image: url("../data/img/Aquavenir.png");
-    padding: 15px;
-    text-align: center;
+.hero {
+	height: 100vh;
+	position: relative;
+	background: url('../data/img/banner.jpg') center/cover fixed no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+	padding-top: 80px;
 }
 
-section {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #e6f2ff;
-    padding: 20px;
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom right, rgba(46, 139, 139, 0.7), rgba(121, 200, 170, 0.7));
+	z-index: 1;
+}
+
+.content {
+	z-index: 2;
+	animation: fadeIn 2s ease-out;
+	padding: 20px;
+}
+
+.logo-container {
+	position: relative;
+	display: inline-block;
+}
+
+.logo-container::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(255,255,255,0));
+	animation: pulse 4s infinite ease-in-out;
+	z-index: 1;
+}
+
+.logo {
+	width: 200px;
+	position: relative;
+	z-index: 2;
+	animation: slideDown 1s ease-out;
+	margin-bottom: 20px;
 }
 
 h1 {
-    color: #1f4e79;
+	font-size: 3em;
+	color: #a7ffcb;
 }
 
-h2 {
-    color: #2e8b57;
+p {
+	font-size: 1.2em;
+	margin-bottom: 30px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-h2 ~ h3 {
-    color: #8b0000;
+.cta-button {
+	text-decoration: none;
+	background-color: #ffffff;
+	color: #2e8b8b;
+	padding: 15px 30px;
+	border-radius: 30px;
+	font-weight: bold;
+	transition: all 0.3s ease;
 }
 
-<style>
-    .carte-container {
-      position: relative;
-      width: 600px;
-    }
+.cta-button:hover {
+	background-color: #a7ffcb;
+	transform: scale(1.05);
+}
 
-    .carte-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+/* About section */
+.about {
+	background-color: #f8fdfc;
+	padding: 80px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
 
-    .region-button {
-      position: absolute;
-      background-color: rgba(255, 0, 0, 0.6);
-      border: none;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-    }
+.about::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('/data/img/pecheaccueil.png') center/cover no-repeat;
+	opacity: 0;
+	transition: opacity 1.5s ease-in-out;
+	z-index: 0;
+	pointer-events: none;
+}
 
-    .region-button:hover {
-      background-color: rgb(111, 255, 0);
-    }
+.about.with-bg::before {
+	opacity: 0.2; /* Ajuste si tu veux que ce soit plus visible */
+}
+
+
+.text-block {
+	position: relative;
+	z-index: 1;
+	max-width: 800px;
+	text-align: center;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.text-block.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.text-block h2 {
+	font-size: 2.5em;
+	color: #2e8b8b;
+	margin-bottom: 20px;
+}
+
+.text-block p {
+	font-size: 1.1em;
+	line-height: 1.6;
+}
+
+.bg-image-hidden {
+	display: none;
+}
+
+/* Bubbles */
+.bubbles {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.bubbles span {
+	position: absolute;
+	bottom: -150px;
+	width: 20px;
+	height: 20px;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	animation: rise 8s infinite ease-in;
+	animation-delay: calc(-1s * var(--i));
+	left: calc(10% * var(--i));
+	filter: blur(1px);
+	pointer-events: none;
+}
+
+.bubbles span:nth-child(1)  { --i: 1; animation-duration: 6s; }
+.bubbles span:nth-child(2)  { --i: 2; animation-duration: 7s; }
+.bubbles span:nth-child(3)  { --i: 3; animation-duration: 5s; }
+.bubbles span:nth-child(4)  { --i: 4; animation-duration: 8s; }
+.bubbles span:nth-child(5)  { --i: 5; animation-duration: 6.5s; }
+.bubbles span:nth-child(6)  { --i: 6; animation-duration: 7.5s; }
+.bubbles span:nth-child(7)  { --i: 7; animation-duration: 6.2s; }
+.bubbles span:nth-child(8)  { --i: 8; animation-duration: 5.7s; }
+.bubbles span:nth-child(9)  { --i: 9; animation-duration: 6.8s; }
+.bubbles span:nth-child(10) { --i: 10; animation-duration: 7.1s; }
+
+/* Header */
+.main-header {
+	width: 100%;
+	padding: 15px 30px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	backdrop-filter: blur(8px);
+	z-index: 100;
+	transition: opacity 0.5s ease;
+}
+
+.main-header.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.header-left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+}
+
+.header-left:hover {
+	opacity: 0.8;
+}
+
+.header-logo {
+	height: 40px;
+	width: 40px;
+	object-fit: contain;
+	filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+}
+
+.site-name {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #a7ffcb;
+}
+
+.header-center {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.nav-buttons {
+	display: flex;
+	gap: 25px;
+}
+
+.nav-buttons a {
+	text-decoration: none;
+	font-weight: 500;
+	color: white;
+	padding: 8px 15px;
+	border-radius: 8px;
+	transition: background 0.3s;
+}
+
+.nav-buttons a:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes slideDown {
+	from { transform: translateY(-30px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes rise {
+	0% {
+		transform: translateY(0) scale(0.8);
+		opacity: 0.6;
+	}
+	70% {
+		opacity: 0.9;
+		transform: translateY(-400px) scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-600px) scale(1.2);
+	}
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: translate(-50%, -50%) scale(2);
+		opacity: 1;
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.5);
+		opacity: 1;
+	}
+}
+
+
+.fish-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.css-fish {
+	position: absolute;
+	width: 60px;
+	height: 30px;
+	background: #4ecdc4;
+	border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+}
+
+.css-fish::before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	top: 5px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 20px solid #4ecdc4;
+}
+
+.css-fish::after {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 8px;
+	width: 5px;
+	height: 5px;
+	background: white;
+	border-radius: 50%;
+}
+
+/* Position et animation — arrivent par la droite */
+.fish1 {
+	top: 25%;
+	left: 110vw;
+	animation: swimLeft 20s linear infinite;
+}
+
+.fish2 {
+	top: 50%;
+	left: 120vw;
+	animation: swimLeft 25s linear infinite;
+	animation-delay: 3s;
+}
+
+.fish3 {
+	top: 70%;
+	left: 130vw;
+	animation: swimLeft 18s linear infinite;
+	animation-delay: 1.5s;
+}
+
+/* Mouvement vers la gauche sans inverser le poisson */
+@keyframes swimLeft {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-150vw);
+	}
+}
+
+.main-footer {
+	background: linear-gradient(to right, #2e8b8b, #79c8aa);
+	color: white;
+	padding: 40px 20px;
+	text-align: center;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.main-footer.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.footer-title {
+	font-size: 1.8em;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #a7ffcb;
+}
+
+.footer-nav {
+	margin: 20px 0;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+
+.footer-nav a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+	opacity: 0.7;
+}
+
+.footer-copy {
+	font-size: 0.9em;
+	opacity: 0.8;
+}
