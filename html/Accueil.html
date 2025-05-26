@@ -1,45 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Aquavenir - Accueil</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Aquavenir</title>
+	<link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <header>
-        <img src="../data/img/Aquavenir.png" alt="Logo Aquavenir" width="400">
-    </header>
+	<header class="main-header">
+		<a href="Accueil.html" class="header-left">
+			<img src="/data/img/Aquavenir.png" alt="Logo Aquavenir" class="header-logo" />
+			<span class="site-name">AQUAVENIR</span>
+		</a>
 
-    <main>
-        <h1>Bienvenue sur Aquavenir !</h1>
-        <h2>Un site dédié à la pêche responsable et à la préservation de la vie aquatique</h2>
+		<div class="header-center">
+			<nav class="nav-buttons">
+				<a href="#about">À propos</a>
+				<a href="#pratiques">Bonnes pratiques</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</div>
+	</header>
 
-        <p>
-            Aquavenir est votre portail d'information pour pratiquer la pêche de manière respectueuse 
-            de la nature. Notre mission : sensibiliser à la protection des espèces aquatiques et 
-            promouvoir les bonnes pratiques de pêche.
-        </p>
+	<section class="hero">
+		<div class="overlay"></div>
 
-        <p>
-            Parcourez nos rubriques pour découvrir :
-        </p>
+        <div class="fish-container">
+	<div class="fish css-fish fish1"></div>
+	<div class="fish css-fish fish2"></div>
+	<div class="fish css-fish fish3"></div>
+</div>
 
-        <ul>
-            <li><strong>Les bonnes pratiques</strong> : conseils pour une pêche durable et respectueuse de l’environnement.</li>
-            <li><strong>La fiche d’identification des poissons</strong> : apprenez à reconnaître les espèces que vous pouvez croiser.</li>
-            <li><strong>Les espèces protégées</strong> : informez-vous sur les poissons à ne pas capturer pour préserver la biodiversité.</li>
-            <li><strong>Les espèces invasives</strong> : comprenez les dangers qu’elles représentent pour nos milieux aquatiques.</li>
-            <li><strong>À propos</strong> : en savoir plus sur le projet Aquavenir et nos engagements.</li>
-        </ul>
+		<div class="content">
+			<div class="logo-container">
+				<img src="/data/img/Aquavenir.png" alt="Logo Aquavenir" class="logo" />
+			</div>
+			<h1>AQUAVENIR</h1>
+			<p>Adoptons les bons gestes pour protéger nos rivières, nos lacs et nos océans.</p>
+			<a href="#about" class="cta-button">Découvrir</a>
+		</div>
+	</section>
 
-        <p>
-            Ensemble, adoptons les bons gestes pour protéger nos rivières, nos lacs et nos océans.
-        </p>
-    </main>
+	<div class="bubbles">
+		<span></span><span></span><span></span><span></span><span></span>
+		<span></span><span></span><span></span><span></span><span></span>
+	</div>
 
-    <footer>
-        <p>©️2025 Seyhan KARA, Giulio TORCHIA. Tous droits réservés.</p>
-    </footer>
+	<section class="about" id="about">
+		<div class="text-block">
+			<h2>Pourquoi Aquavenir ?</h2>
+			<p>
+				Aquavenir est un projet dédié à la pêche durable et à la préservation des milieux aquatiques.
+				Notre mission est de sensibiliser les pêcheurs et les citoyens aux enjeux environnementaux liés aux rivières,
+				lacs et océans. À travers des fiches pratiques, des guides d’identification et des conseils, nous vous aidons
+				à adopter les bons gestes pour une pêche responsable et respectueuse de la biodiversité.
+			</p>
+		</div>
+		<img src="/data/img/pecheaccueil.png" alt="Illustration pêche" class="bg-image-hidden" />
+	</section>
+
+
+    <footer class="main-footer">
+	<div class="footer-content">
+		<p class="footer-title">AQUAVENIR</p>
+		<nav class="footer-nav">
+			<a href="#about">À propos</a>
+			<a href="#pratiques">Pratiques</a>
+			<a href="#contact">Contact</a>
+		</nav>
+		<p class="footer-copy">© 2025 Aquavenir – Tous droits réservés</p>
+	</div>
+
+    <script src="js/scroll.js"></script>
+</footer>
+
 </body>
 </html>
