@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonnes pratiques - Aquavenir</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="Accueil.html" class="header-left">
+            <img src="../data/img/Aquavenir.png" alt="Logo Aquavenir" class="header-logo" />
+            <span class="site-name">AQUAVENIR</span>
+        </a>
+        <div class="header-center">
+            <nav class="nav-buttons">
+                <a href="Où_Pécher.html">Où Pêcher ?</a>
+                <a href="Bonnes_pratiques.html">Bonnes Pratiques</a>
+                <a href="A_propos.html">À propos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-bonnes-pratiques">
+        <div class="overlay"></div>
+        <div class="scroll-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="fish-container">
+            <div class="fish css-fish fish1"></div>
+            <div class="fish css-fish fish2"></div>
+            <div class="fish css-fish fish3"></div>
+        </div>
+
+        <div class="hamecon h1"></div>
+        <div class="hamecon h2"></div>
+        <div class="hamecon h3"></div>
+
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Adoptez les bons gestes pour demain</h1>
+            <p>Chaque action compte. Ensemble, protégeons nos milieux aquatiques avec des pratiques de pêche
+                responsables et durables.</p>
+        </div>
+    </section>
+
+    <button id="backToTop" title="Haut">↑</button>
+
+    <section class="about about-bonnes-pratiques">
+        <div class="text-block">
+            <h2>Les bons réflexes à adopter</h2>
+            <p>
+                Pêcher de manière responsable, c'est avant tout respecter la nature qui nous entoure. Que vous soyez
+                pêcheur d'un jour ou passionné de toujours, adopter les bonnes pratiques permet de préserver les
+                écosystèmes aquatiques, la faune et la flore, et de garantir une pêche viable pour les générations
+                futures.
+            </p>
+            <ul>
+                <li>Relâcher les espèces protégées ou non consommées</li>
+                <li>Utiliser des hameçons sans ardillon pour limiter les blessures</li>
+                <li>Respecter les tailles et les périodes de capture</li>
+                <li>Ne pas jeter ses déchets dans la nature</li>
+                <li>Préserver la végétation des berges</li>
+                <li>Signaler les comportements polluants ou les espèces invasives</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="quiz-section">
+        <h2>Quiz : Êtes-vous un pêcheur responsable ?</h2>
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. Que faire d’une espèce protégée que vous attrapez ?</p>
+                <label><input type="radio" name="q1" value="a"> La garder si elle est grosse</label><br>
+                <label><input type="radio" name="q1" value="b"> La relâcher immédiatement</label><br>
+                <label><input type="radio" name="q1" value="c"> L’utiliser comme appât</label>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Que faire de vos déchets lors de la pêche ?</p>
+                <label><input type="radio" name="q2" value="a"> Les enterrer</label><br>
+                <label><input type="radio" name="q2" value="b"> Les jeter à l’eau</label><br>
+                <label><input type="radio" name="q2" value="c"> Les emporter avec vous</label>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. Pourquoi éviter les hameçons avec ardillon ?</p>
+                <label><input type="radio" name="q3" value="a"> Pour attraper plus de poissons</label><br>
+                <label><input type="radio" name="q3" value="b"> Pour limiter les blessures aux poissons</label><br>
+                <label><input type="radio" name="q3" value="c"> Parce qu’ils sont illégaux</label>
+            </div>
+
+            <button type="submit" class="quiz-button">🎯 Voir les résultats</button>
+
+        </form>
+        <div id="quizResult"></div>
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-title">AQUAVENIR</p>
+            <nav class="footer-nav">
+                <a href="A_propos.html">À propos</a>
+                <a href="Où_Pécher.html">Où pêcher ?</a>
+                <a href="Bonnes_pratiques.html">Bonnes Pratiques</a>
+            </nav>
+            <p class="footer-copy">© 2025 Aquavenir – Tous droits réservés</p>
+        </div>
+        <script src="js/scroll.js"></script>
+
+        <script src="js/quizz.js"></script>
+    </footer>
+</body>
+
+</html>

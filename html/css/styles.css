@@ -18,7 +18,7 @@ body {
 .hero {
 	height: 100vh;
 	position: relative;
-	background: url('../data/img/banner.jpg') center/cover fixed no-repeat;
+	background: url('../../data/img/banner.jpg') center/cover fixed no-repeat;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -46,6 +46,8 @@ body {
 .logo-container {
 	position: relative;
 	display: inline-block;
+
+    
 }
 
 .logo-container::before {
@@ -68,6 +70,7 @@ body {
 	z-index: 2;
 	animation: slideDown 1s ease-out;
 	margin-bottom: 20px;
+    border-radius: 100%;
 }
 
 h1 {
@@ -117,16 +120,56 @@ p {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url('/data/img/pecheaccueil.png') center/cover no-repeat;
+	background: url('../../data/img/pecheaccueil.png') center/cover no-repeat;
 	opacity: 0;
 	transition: opacity 1.5s ease-in-out;
 	z-index: 0;
 	pointer-events: none;
 }
 
-.about.with-bg::before {
-	opacity: 0.2; /* Ajuste si tu veux que ce soit plus visible */
+.about.about-apropos::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../../data/img/apropos.jpg') center/cover no-repeat;
+	opacity: 0;
+	transition: opacity 1.5s ease-in-out;
+	z-index: 0;
+	pointer-events: none;
 }
+
+.about-bonnes-pratiques::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../data/img/bonnespratiques.jpg') center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+.about.with-bg::before {
+	opacity: 0.2; 
+}
+
+.about.about.with-bg::before{
+	opacity: 0.2;
+}
+
+.about-bonnes-pratiques.with-bg::before {
+	opacity: 0.2;
+}
+
+
 
 
 .text-block {
@@ -364,7 +407,7 @@ p {
 	animation-delay: 1.5s;
 }
 
-/* Mouvement vers la gauche sans inverser le poisson */
+/* Mouvement vers la gauche */
 @keyframes swimLeft {
 	0% {
 		transform: translateX(0);
@@ -418,4 +461,595 @@ p {
 .footer-copy {
 	font-size: 0.9em;
 	opacity: 0.8;
+}
+
+
+h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .carte-container {
+      position: relative;
+      display: inline-block;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      max-width: 840px;
+    }
+
+    .map-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .map {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .region-button {
+      position: absolute;
+      width: 4.375%;
+      height: 0;
+      padding-bottom: 4.375%;
+      background-color: rgba(0, 123, 255, 0.7);
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transform: translate(-50%, -50%);
+    }
+
+    .region-button:hover {
+      background-color: rgba(255, 0, 0, 0.8);
+      transform: translate(-50%, -50%) scale(1.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .region-button:active {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    .btn-hauts-de-france {
+      top: 13%;
+      left: 55%;
+    }
+
+    .btn-ile-de-france {
+      top: 26%;
+      left: 55%;
+    }
+
+    .btn-grand-est {
+      top: 25%;
+      left: 72%;
+    }
+
+    .btn-centre-val-de-loire {
+      top: 37%;
+      left: 50%;
+    }
+
+    .btn-nouvelle-aquitaine {
+      top: 59%;
+      left: 43%;
+    }
+
+    .btn-paca {
+      top: 72%;
+      left: 76%;
+    }
+
+    .btn-occitanie {
+      top: 75%;
+      left: 51%;
+    }
+
+    .btn-corse {
+      top: 88%;
+      left: 94%;
+    }
+
+    .btn-auvergne-rhone-alpes {
+      top: 58%;
+      left: 67%;
+    }
+
+    .btn-bourgogne-franche-comte {
+      top: 40%;
+      left: 67%;
+    }
+
+    .btn-bretagne {
+      top: 32%;
+      left: 24%;
+    }
+
+    .btn-pays-de-la-loire {
+      top: 38%;
+      left: 35%;
+    }
+
+    .btn-normandie {
+      top: 23%;
+      left: 40%;
+    }
+
+    .btn-guyane {
+      top: 62%;
+      left: 14%;
+    }
+
+    #info-region {
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      min-height: 100px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .region-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .region-info {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #34495e;
+    }
+
+    @media (max-width: 600px) {
+      .region-button {
+        width: 6%;
+        padding-bottom: 6%;
+      }
+
+      #info-region {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .region-title {
+        font-size: 1.4em;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .region-button {
+        width: 8%;
+        padding-bottom: 8%;
+      }
+    }
+
+
+.text-block ul li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.text-block ul li.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  display: none;
+  background-color: #2e8b8b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.counters {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 1.5em;
+  color: #2e8b8b;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+}
+
+.scroll-indicator span {
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+  animation: bounce 1.5s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+.scroll-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.scroll-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(10px) rotate(-45deg);
+    opacity: 1;
+  }
+}
+
+
+.hamecon {
+  position: absolute;
+  width: 20px;
+  height: 60px;
+  border: 3px solid #4ecdc4;
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+  background: none;
+  animation: floatHamecon 5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.hamecon::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 15px;
+  background: #4ecdc4;
+  border-radius: 10px;
+}
+
+.hamecon.h1 { top: 30%; left: 10%; animation-delay: 0s; }
+.hamecon.h2 { top: 50%; left: 85%; animation-delay: 1.5s; }
+.hamecon.h3 { top: 65%; left: 40%; animation-delay: 3s; }
+
+@keyframes floatHamecon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+
+/* Hero spécial pour la carte */
+.hero-carte {
+  height: 60vh;
+  background: url('../data/img/bg_peche_spot.jpg') center/cover fixed no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-carte .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(46, 139, 139, 0.6), rgba(121, 200, 170, 0.6));
+  z-index: 1;
+}
+
+.hero-carte .content {
+  z-index: 2;
+  animation: fadeIn 2s ease-out;
+  padding: 20px;
+}
+
+.hero-carte h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  color: #a7ffcb;
+}
+
+.hero-carte p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: auto;
+  color: #f0f0f0;
+}
+
+.map-wrapper .map {
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease;
+}
+
+.map-wrapper .map:hover {
+  transform: scale(1.015);
+}
+
+.hero-carte::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='20' viewBox='0 200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 0, 50 10 T 100 10 T 150 10 T 200 10' fill='none' stroke='%23ffffff' stroke-width='2' stroke-dasharray='8 12' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 70%;
+  background-size: auto 60px;
+  animation: dash-scroll 10s linear infinite;
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes dash-scroll {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 200px;
+  }
+}
+
+
+.extra-buttons {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.info-button {
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-button.green {
+  background-color: #2e8b57;
+}
+
+.info-button.red {
+  background-color: #c0392b;
+}
+
+.info-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+
+.hero-especes-protege {
+  height: 60vh;
+  background: url('../../data/img/bg_protege.jpg') center/cover fixed no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-especes-protege .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(46, 139, 139, 0.6);
+  z-index: 1;
+}
+
+.hero-especes-protege .content {
+  z-index: 2;
+  animation: fadeIn 2s ease-out;
+  padding: 20px;
+}
+
+.about-especes {
+  padding: 60px 20px;
+  background: #f8fdfc;
+  text-align: center;
+}
+
+.species-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+
+
+.species-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+
+.species-card:hover {
+  transform: translateY(-5px);
+}
+
+.species-card h3 {
+  color: #2e8b8b;
+  margin-bottom: 10px;
+}
+
+
+.species-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.intro-especes {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.intro-especes h2 {
+  font-size: 2.5em;
+  color: #2e8b8b;
+  margin-bottom: 20px;
+}
+
+.intro-especes p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+.hero-especes-invasives {
+  height: 60vh;
+  background: url('../../data/img/bg_invasives.jpg') center/cover fixed no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-especes-invasives .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(200, 30, 30, 0.6); 
+  z-index: 1;
+}
+
+
+.quiz-section {
+  background: #e0f7f7;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 50px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-section h2 {
+  color: #2e8b8b;
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 25px;
+}
+
+#quizResult {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.quiz-button {
+  background-color: #2e8b8b;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quiz-button:hover {
+  background-color: #3fa89a;
+  transform: scale(1.05);
+}
+
+.quiz-button:active {
+  background-color: #276f6f;
+  transform: scale(0.97);
+}
+
+
+.github-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e0f7f1;
+  border-left: 5px solid #2e8b8b;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.github-section p {
+  font-size: 1.1em;
+  color: #2c3e50;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #2e8b8b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.github-link:hover {
+  background-color: #79c8aa;
+  transform: translateY(-2px);
 }
